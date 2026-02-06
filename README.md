@@ -568,4 +568,687 @@ app.use(bodyParser.json());
 
 ---
 
-If you want, I can now prepare **UNIT–2, UNIT–3, UNIT–4, and UNIT–5** in the same **exam-scoring format**.
+UNIT-2
+
+Below is a **complete exam-oriented 20-mark answer for UNIT–II** of **Full Stack Application Development**, prepared strictly according to your instructions.
+
+---
+
+# **UNIT – II: UNDERSTANDING REACT AND WEB SERVER & REACT STATE**
+
+---
+
+## **1. Introduction to React and Web Server**
+
+### **Definition**
+
+React is an open-source JavaScript library used for building **interactive and dynamic user interfaces** for web applications.
+
+A Web Server is a system that receives requests from clients (browsers) and sends web pages or data as responses.
+
+In MERN stack:
+
+* React works on the client side
+* Node.js + Express works as the web server
+
+---
+
+### **Role of React in Full Stack Development**
+
+React is used to:
+
+1. Create dynamic UI
+2. Update pages without reload
+3. Improve user experience
+4. Manage application components
+5. Communicate with backend APIs
+
+---
+
+### **Client–Server Architecture**
+
+```
+Browser (React)
+      ↓ Request
+Web Server (Node + Express)
+      ↓
+Database (MongoDB)
+      ↑
+   Response
+```
+
+---
+
+## **2. Server Setup for React Application**
+
+### **Definition**
+
+Server setup refers to the configuration of tools and environment required to run React applications and backend services.
+
+---
+
+### **Steps for Server Setup**
+
+#### Step 1: Install Node.js
+
+Node.js must be installed to run React.
+
+Check version:
+
+```
+node -v
+npm -v
+```
+
+---
+
+#### Step 2: Install React App Tool
+
+```
+npx create-react-app myapp
+```
+
+Creates a React project.
+
+---
+
+#### Step 3: Start Development Server
+
+```
+cd myapp
+npm start
+```
+
+Runs server on:
+
+```
+http://localhost:3000
+```
+
+---
+
+### **Folder Structure of React App**
+
+```
+myapp/
+ ├── node_modules
+ ├── public
+ ├── src
+ │   ├── App.js
+ │   ├── index.js
+ │   └── components
+ └── package.json
+```
+
+---
+
+## **3. NVM (Node Version Manager)**
+
+### **Definition**
+
+NVM is a tool used to install and manage multiple versions of Node.js on a single system.
+
+---
+
+### **Features of NVM**
+
+1. Switch between versions
+2. Install old/new versions
+3. Manage projects easily
+4. Avoid compatibility issues
+
+---
+
+### **Commands**
+
+Install Node version:
+
+```
+nvm install 16
+```
+
+Use version:
+
+```
+nvm use 16
+```
+
+List versions:
+
+```
+nvm list
+```
+
+---
+
+## **4. Node.js, NPM, and Express in React Environment**
+
+---
+
+### **Node.js**
+
+* Runs JavaScript on server
+* Manages backend
+* Supports API creation
+
+---
+
+### **NPM (Node Package Manager)**
+
+#### Definition
+
+NPM is used to install and manage libraries in Node.js projects.
+
+---
+
+#### Functions of NPM
+
+1. Install packages
+2. Update packages
+3. Remove packages
+4. Maintain dependencies
+
+---
+
+#### Example
+
+```
+npm install axios
+```
+
+---
+
+### **Express.js**
+
+Used to create backend APIs.
+
+Example:
+
+```javascript
+const express = require('express');
+const app = express();
+
+app.get('/',(req,res)=>{
+  res.send("Hello");
+});
+```
+
+---
+
+## **5. Build-Time JSX Compilation**
+
+### **Definition**
+
+JSX is a syntax extension that allows writing HTML inside JavaScript.
+
+Before execution, JSX is converted into JavaScript.
+
+This process is called **JSX Compilation**.
+
+---
+
+### **JSX Example**
+
+```javascript
+const element = <h1>Hello</h1>;
+```
+
+Converted to:
+
+```javascript
+React.createElement("h1",null,"Hello");
+```
+
+---
+
+### **Compilation Process**
+
+```
+JSX → Babel → JavaScript → Browser
+```
+
+---
+
+### **Role of Babel**
+
+Babel is a compiler that converts modern JavaScript and JSX into browser-compatible code.
+
+---
+
+## **6. Separate Script File, Transform, and Automate**
+
+---
+
+### **Separate Script File**
+
+React uses separate JavaScript files for components.
+
+Example:
+
+```
+Header.js
+Footer.js
+```
+
+---
+
+### **Transform**
+
+Transform means converting modern code into old compatible code.
+
+Done using:
+
+* Babel
+* Webpack
+
+---
+
+### **Automate**
+
+Automation means automatically compiling, bundling, and refreshing code.
+
+Tools used:
+
+* Webpack
+* Create React App
+* Vite
+
+---
+
+### **Benefits**
+
+1. Faster development
+2. Less manual work
+3. Error detection
+4. Automatic reload
+
+---
+
+## **7. React Library**
+
+### **Definition**
+
+React library provides functions and tools for building UI components.
+
+---
+
+### **Main Features**
+
+1. Virtual DOM
+2. Component-based
+3. Reusable code
+4. Fast rendering
+5. One-way data binding
+
+---
+
+### **Virtual DOM**
+
+Virtual DOM is a lightweight copy of real DOM.
+
+```
+Change → Virtual DOM → Compare → Update Real DOM
+```
+
+Improves performance.
+
+---
+
+## **8. React Components**
+
+### **Definition**
+
+Components are independent and reusable blocks of UI.
+
+---
+
+### **Types of Components**
+
+#### 1. Class Components
+
+```javascript
+class Welcome extends React.Component {
+ render() {
+  return <h1>Hello</h1>;
+ }
+}
+```
+
+---
+
+#### 2. Functional Components
+
+```javascript
+function Welcome() {
+ return <h1>Hello</h1>;
+}
+```
+
+---
+
+### **Advantages of Components**
+
+1. Reusability
+2. Easy maintenance
+3. Modular structure
+4. Readable code
+
+---
+
+## **9. Composing Components**
+
+### **Definition**
+
+Composing means combining multiple components into one.
+
+---
+
+### **Example**
+
+```javascript
+function App() {
+ return (
+  <Header/>
+  <Content/>
+  <Footer/>
+ );
+}
+```
+
+---
+
+### **Benefits**
+
+1. Better structure
+2. Easy management
+3. Clean design
+
+---
+
+## **10. Passing Data Using Properties (Props)**
+
+### **Definition**
+
+Props are used to pass data from parent to child components.
+
+---
+
+### **Example**
+
+```javascript
+function Student(props) {
+ return <h1>{props.name}</h1>;
+}
+
+<Student name="Rahul"/>
+```
+
+---
+
+### **Characteristics of Props**
+
+1. Read-only
+2. Immutable
+3. One-way data flow
+4. Used for communication
+
+---
+
+## **11. Property Validation**
+
+### **Definition**
+
+Property validation ensures correct type of data is passed.
+
+---
+
+### **Using PropTypes**
+
+```javascript
+Student.propTypes = {
+ name: PropTypes.string
+};
+```
+
+---
+
+### **Benefits**
+
+1. Avoid errors
+2. Improve reliability
+3. Debugging support
+
+---
+
+## **12. Using Children in React**
+
+### **Definition**
+
+Children allow passing components inside components.
+
+---
+
+### **Example**
+
+```javascript
+function Box(props) {
+ return <div>{props.children}</div>;
+}
+```
+
+---
+
+### **Usage**
+
+Used in:
+
+* Layouts
+* Containers
+* Wrappers
+
+---
+
+## **13. Dynamic Composition**
+
+### **Definition**
+
+Dynamic composition means creating components at runtime based on data.
+
+---
+
+### **Example**
+
+```javascript
+items.map(item => <List data={item}/>)
+```
+
+---
+
+### **Advantages**
+
+1. Flexible UI
+2. Dynamic rendering
+3. Data-driven design
+
+---
+
+## **14. Understanding React State**
+
+### **Definition**
+
+State is an object that stores dynamic data of a component.
+
+---
+
+### **Example**
+
+```javascript
+const [count,setCount] = useState(0);
+```
+
+---
+
+### **Characteristics of State**
+
+1. Mutable
+2. Local to component
+3. Triggers re-render
+4. Manages data
+
+---
+
+## **15. Setting State**
+
+### **Using useState Hook**
+
+```javascript
+const [name,setName] = useState("Ram");
+```
+
+---
+
+### **Updating State**
+
+```javascript
+setName("Shyam");
+```
+
+---
+
+### **Rules**
+
+1. Do not modify directly
+2. Use setter function
+3. Updates are asynchronous
+
+---
+
+## **16. Event Handling in React**
+
+### **Definition**
+
+Event handling allows responding to user actions.
+
+---
+
+### **Example**
+
+```javascript
+<button onClick={handleClick}>Click</button>
+```
+
+---
+
+### **Common Events**
+
+| Event    | Purpose      |
+| -------- | ------------ |
+| onClick  | Mouse click  |
+| onChange | Input change |
+| onSubmit | Form submit  |
+
+---
+
+## **17. Communication from Child to Parent**
+
+### **Definition**
+
+Child-to-parent communication is done using callback functions.
+
+---
+
+### **Example**
+
+```javascript
+function Parent() {
+ function getData(data){
+  console.log(data);
+ }
+
+ return <Child send={getData}/>;
+}
+```
+
+---
+
+## **18. Stateless Components**
+
+### **Definition**
+
+Stateless components do not maintain state.
+
+They depend only on props.
+
+---
+
+### **Example**
+
+```javascript
+function Hello(props){
+ return <h1>{props.name}</h1>;
+}
+```
+
+---
+
+### **Advantages**
+
+1. Simple
+2. Fast
+3. Easy testing
+4. Less memory
+
+---
+
+## **19. Designing Components: State vs Props**
+
+| Feature    | State        | Props         |
+| ---------- | ------------ | ------------- |
+| Modifiable | Yes          | No            |
+| Scope      | Local        | Global        |
+| Purpose    | Dynamic data | Communication |
+| Control    | Component    | Parent        |
+
+---
+
+## **20. Component Hierarchy Communication**
+
+### **Definition**
+
+Component hierarchy refers to parent-child relationships.
+
+---
+
+### **Types**
+
+1. Parent → Child (Props)
+2. Child → Parent (Callback)
+3. Sibling (Common parent)
+
+---
+
+### **Diagram**
+
+```
+App
+ ↓
+Parent
+ ↓
+Child
+```
+
+---
+
+## **21. Applications of Unit–II Concepts**
+
+1. Form handling
+2. Dashboard UI
+3. Admin panels
+4. User profiles
+5. Dynamic pages
+6. SPA applications
+
+---
+
+
+

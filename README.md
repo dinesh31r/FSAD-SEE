@@ -1697,12 +1697,11 @@ user.save();
 
 ### **Process Flow (Mermaid Diagram)**
 
-```mermaid
 flowchart TD
     A[Create Object] --> B[Call save()]
     B --> C[Validate Schema]
     C --> D[Store in MongoDB]
-```
+
 
 ---
 

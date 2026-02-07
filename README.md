@@ -2720,1105 +2720,6 @@ Great 👍 I will now start generating **UNIT–II (React)** in the **same exam-
 
 ---
 
-# 📘 UNIT–II (Part–1)
-
-## React Basics & Environment Setup (Q1 to Q8)
-
----
-
-# ✅ Question 1 (5 Marks)
-
-## Define React. How Does It Differ from Frameworks Like AngularJS?
-
----
-
-## 🔹 Definition of React
-
-**React** is an open-source JavaScript library developed by Facebook for building **user interfaces**, especially single-page applications.
-
-It uses **component-based architecture**.
-
----
-
-## 🔹 Features of React
-
-1. Component-based
-2. Virtual DOM
-3. Fast rendering
-4. Reusable components
-5. One-way data binding
-
----
-
-## 🔹 Difference Between React and AngularJS
-
-| Feature  | React       | AngularJS  |
-| -------- | ----------- | ---------- |
-| Type     | Library     | Framework  |
-| Language | JavaScript  | TypeScript |
-| DOM      | Virtual DOM | Real DOM   |
-| Learning | Easy        | Difficult  |
-| Size     | Lightweight | Heavy      |
-
----
-
-## 🔹 Example
-
-### React
-
-```js
-function App() {
-  return <h1>Hello</h1>;
-}
-```
-
----
-
-## ✅ Conclusion
-
-React is lightweight and flexible compared to AngularJS.
-
----
-
-# ✅ Question 2 (5 Marks)
-
-## Explain the Role of NVM in Managing Node.js Versions
-
----
-
-## 🔹 Definition of NVM
-
-**NVM (Node Version Manager)** is a tool used to install and manage multiple Node.js versions.
-
----
-
-## 🔹 Need for NVM
-
-Different projects require different Node versions.
-
----
-
-## 🔹 Basic Commands
-
-```bash
-nvm install 18
-nvm use 18
-nvm list
-```
-
----
-
-## 🔹 Advantages
-
-1. Easy version switching
-2. Avoids conflicts
-3. Supports legacy projects
-4. Improves productivity
-
----
-
-## 🔹 Workflow
-
-```mermaid
-flowchart LR
-    A[Developer] --> B[NVM]
-    B --> C[Node v14]
-    B --> D[Node v18]
-```
-
----
-
-## ✅ Conclusion
-
-NVM simplifies Node.js version control.
-
----
-
-# ✅ Question 3 (5 Marks)
-
-## What is JSX? Write a Short Example of JSX Code Embedded in HTML
-
----
-
-## 🔹 Definition of JSX
-
-**JSX (JavaScript XML)** is a syntax extension that allows writing HTML inside JavaScript.
-
-Used in React for UI design.
-
----
-
-## 🔹 Features
-
-1. Looks like HTML
-2. Compiled to JavaScript
-3. Supports expressions
-
----
-
-## 🔹 Example
-
-```js
-const element = (
-  <div>
-     <h1>Hello React</h1>
-     <p>Welcome</p>
-  </div>
-);
-```
-
----
-
-## 🔹 JSX Compilation
-
-```mermaid
-flowchart LR
-    A[JSX] --> B[Babel]
-    B --> C[JavaScript]
-```
-
----
-
-## 🔹 Benefits
-
-* Easy UI coding
-* Better readability
-* Error detection
-
----
-
-## ✅ Conclusion
-
-JSX simplifies UI creation.
-
----
-
-# ✅ Question 4 (5 Marks)
-
-## List Any Five Advantages of Component Composition in React
-
----
-
-## 🔹 Definition
-
-Component composition means combining small components to form larger components.
-
----
-
-## 🔹 Advantages
-
-1. Reusability
-2. Easy maintenance
-3. Modular design
-4. Scalability
-5. Better testing
-
----
-
-## 🔹 Example
-
-```js
-function Header() { return <h1>Header</h1>; }
-function Footer() { return <h1>Footer</h1>; }
-
-function App() {
-  return (
-    <>
-      <Header/>
-      <Footer/>
-    </>
-  );
-}
-```
-
----
-
-## 🔹 Composition Flow
-
-```mermaid
-flowchart TD
-    A[App] --> B[Header]
-    A --> C[Footer]
-```
-
----
-
-## ✅ Conclusion
-
-Composition improves code structure.
-
----
-
-# ✅ Question 5 (4 Marks)
-
-## What is the Purpose of npm init in a React Project?
-
----
-
-## 🔹 Definition
-
-`npm init` creates a **package.json** file.
-
----
-
-## 🔹 Command
-
-```bash
-npm init
-```
-
----
-
-## 🔹 Functions
-
-1. Stores project info
-2. Manages dependencies
-3. Enables scripts
-4. Tracks versions
-
----
-
-## 🔹 package.json Example
-
-```json
-{
-  "name": "reactapp",
-  "version": "1.0.0"
-}
-```
-
----
-
-## ✅ Conclusion
-
-npm init initializes React projects.
-
----
-
-# ✅ Question 6 (4 Marks)
-
-## Describe the Role of this.props.children in React Components
-
----
-
-## 🔹 Definition
-
-`this.props.children` represents content passed between component tags.
-
----
-
-## 🔹 Example
-
-```js
-function Box(props) {
-  return <div>{props.children}</div>;
-}
-
-<Box>Hello</Box>
-```
-
----
-
-## 🔹 Output
-
-```
-Hello
-```
-
----
-
-## 🔹 Advantages
-
-1. Flexible components
-2. Reusable layouts
-3. Better nesting
-
----
-
-## 🔹 Flow
-
-```mermaid
-flowchart LR
-    A[Parent] --> B[Children]
-    B --> C[Component]
-```
-
----
-
-## ✅ Conclusion
-
-props.children supports nested components.
-
----
-
-# ✅ Question 7 (4 Marks)
-
-## What is Property Validation in React? Give an Example
-
----
-
-## 🔹 Definition
-
-Property validation checks whether props have correct type.
-
-Done using **PropTypes**.
-
----
-
-## 🔹 Example
-
-```js
-import PropTypes from "prop-types";
-
-function User(props) {
-  return <h1>{props.name}</h1>;
-}
-
-User.propTypes = {
-  name: PropTypes.string.isRequired
-};
-```
-
----
-
-## 🔹 Benefits
-
-1. Reduces errors
-2. Improves reliability
-3. Debugging support
-
----
-
-## ✅ Conclusion
-
-PropTypes improves component safety.
-
----
-
-# ✅ Question 8 (6 Marks)
-
-## Explain Serverless React Setup and Local HTTP Server Setup
-
----
-
-## 🔹 Serverless Setup
-
-Uses cloud hosting.
-
-Examples:
-
-* Netlify
-* Vercel
-
-Steps:
-
-```bash
-npm run build
-```
-
-Upload build folder.
-
----
-
-## 🔹 Local Server Setup
-
-Uses local server.
-
-Example:
-
-```bash
-npm start
-```
-
----
-
-## 🔹 Comparison Table
-
-| Feature | Serverless | Local    |
-| ------- | ---------- | -------- |
-| Hosting | Cloud      | Local    |
-| Cost    | Low        | Free     |
-| Speed   | High       | Moderate |
-| Access  | Public     | Private  |
-
----
-
-## 🔹 Architecture
-
-```mermaid
-flowchart LR
-    A[User] --> B[Cloud Server]
-    A --> C[Local Server]
-```
-
----
-
-## ✅ Conclusion
-
-Serverless is used for deployment, local for development.
-
----
-
-Great 👍 Continuing **UNIT–II (React)** in the same **exam-oriented format**, strictly according to marks, with clear headings, code, Mermaid diagrams, and **no shrinking at the end**.
-
-All answers are prepared as per your question bank.
-
----
-
-# 📘 UNIT–II (Part–2)
-
-## React Components, Props & Application Development (Q9 to Q16)
-
----
-
-# ✅ Question 9 (5 Marks)
-
-## Explain Functional and Class Components in React with Examples
-
----
-
-## 🔹 Definition of React Component
-
-A **React component** is a reusable piece of UI written in JavaScript.
-
----
-
-## 🔹 1) Functional Component
-
-A functional component is a simple JavaScript function.
-
-### Example
-
-```js
-function Welcome() {
-  return <h1>Hello User</h1>;
-}
-```
-
----
-
-### Features
-
-1. Easy to write
-2. Less code
-3. Uses Hooks
-4. Better performance
-
----
-
-## 🔹 2) Class Component
-
-A class component is created using ES6 class.
-
-### Example
-
-```js
-import React, { Component } from "react";
-
-class Welcome extends Component {
-  render() {
-    return <h1>Hello User</h1>;
-  }
-}
-
-export default Welcome;
-```
-
----
-
-### Features
-
-1. Uses lifecycle methods
-2. Supports state (older versions)
-3. More complex
-
----
-
-## 🔹 Comparison Table
-
-| Feature     | Functional | Class       |
-| ----------- | ---------- | ----------- |
-| Syntax      | Function   | Class       |
-| State       | Hooks      | this.state  |
-| Performance | Faster     | Slower      |
-| Usage       | Modern     | Traditional |
-
----
-
-## 🔹 Component Flow
-
-```mermaid
-flowchart LR
-    A[Component] --> B[Render UI]
-    B --> C[Browser]
-```
-
----
-
-## ✅ Conclusion
-
-Functional components are preferred in modern React.
-
----
-
-# ✅ Question 10 (6 Marks)
-
-## Explain Props in React and Their Importance with Example
-
----
-
-## 🔹 Definition of Props
-
-**Props (Properties)** are used to pass data from parent to child components.
-
-They are read-only.
-
----
-
-## 🔹 Example
-
-### Parent Component
-
-```js
-function App() {
-  return <User name="Amit" age={20} />;
-}
-```
-
-### Child Component
-
-```js
-function User(props) {
-  return <h2>{props.name} - {props.age}</h2>;
-}
-```
-
----
-
-## 🔹 Working
-
-1. Parent sends data
-2. Child receives via props
-3. Displays data
-
----
-
-## 🔹 Diagram
-
-```mermaid
-flowchart LR
-    A[Parent] --> B[Props]
-    B --> C[Child]
-```
-
----
-
-## 🔹 Importance
-
-1. Data sharing
-2. Reusability
-3. Component communication
-4. Clean architecture
-
----
-
-## ✅ Conclusion
-
-Props enable component interaction.
-
----
-
-# ✅ Question 11 (6 Marks)
-
-## Write a React Program to Display Data in Tabular Format
-
----
-
-## 🔹 Program Code
-
-```js
-function StudentTable() {
-
-  const students = [
-    { id:1, name:"Rahul", marks:80 },
-    { id:2, name:"Amit", marks:75 },
-    { id:3, name:"Neha", marks:90 }
-  ];
-
-  return (
-    <table border="1">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Marks</th>
-      </tr>
-
-      {students.map((s) => (
-        <tr key={s.id}>
-          <td>{s.id}</td>
-          <td>{s.name}</td>
-          <td>{s.marks}</td>
-        </tr>
-      ))}
-    </table>
-  );
-}
-
-export default StudentTable;
-```
-
----
-
-## 🔹 Explanation
-
-| Part  | Purpose   |
-| ----- | --------- |
-| map() | Loop data |
-| key   | Unique id |
-| table | Display   |
-
----
-
-## 🔹 Table Rendering Flow
-
-```mermaid
-flowchart LR
-    A[Array Data] --> B[map()]
-    B --> C[Table Rows]
-```
-
----
-
-## ✅ Conclusion
-
-map() helps display dynamic data.
-
----
-
-# ✅ Question 12 (5 Marks)
-
-## Explain Parent–Child Communication in React with Example
-
----
-
-## 🔹 Definition
-
-Parent–Child communication occurs using props and callback functions.
-
----
-
-## 🔹 Example
-
-### Parent
-
-```js
-function Parent() {
-
-  function show(msg) {
-    alert(msg);
-  }
-
-  return <Child send={show} />;
-}
-```
-
-### Child
-
-```js
-function Child(props) {
-  return (
-    <button onClick={() => props.send("Hello")}>
-      Click
-    </button>
-  );
-}
-```
-
----
-
-## 🔹 Working
-
-1. Parent sends function
-2. Child calls function
-3. Parent receives data
-
----
-
-## 🔹 Diagram
-
-```mermaid
-flowchart LR
-    A[Parent] --> B[Function Prop]
-    B --> C[Child]
-    C --> A
-```
-
----
-
-## ✅ Conclusion
-
-Callbacks enable two-way communication.
-
----
-
-# ✅ Question 13 (4 Marks)
-
-## Purpose of Key Attribute in React Lists
-
----
-
-## 🔹 Definition
-
-`key` uniquely identifies list elements.
-
----
-
-## 🔹 Example
-
-```js
-items.map((item) => (
-  <li key={item.id}>{item.name}</li>
-));
-```
-
----
-
-## 🔹 Importance
-
-1. Faster rendering
-2. Avoids duplication
-3. Efficient updates
-
----
-
-## 🔹 Flow
-
-```mermaid
-flowchart LR
-    A[List] --> B[key]
-    B --> C[Efficient Render]
-```
-
----
-
-## ✅ Conclusion
-
-Keys improve list performance.
-
----
-
-# ✅ Question 14 (5 Marks)
-
-## Explain npm Scripts in React Projects
-
----
-
-## 🔹 Definition
-
-npm scripts automate tasks.
-
-Defined in package.json.
-
----
-
-## 🔹 Example
-
-```json
-"scripts": {
-  "start": "react-scripts start",
-  "build": "react-scripts build",
-  "test": "react-scripts test"
-}
-```
-
----
-
-## 🔹 Common Scripts
-
-| Script | Purpose    |
-| ------ | ---------- |
-| start  | Run app    |
-| build  | Production |
-| test   | Testing    |
-| eject  | Customize  |
-
----
-
-## 🔹 Execution
-
-```bash
-npm start
-```
-
----
-
-## 🔹 Workflow
-
-```mermaid
-flowchart LR
-    A[Developer] --> B[npm run]
-    B --> C[Script]
-```
-
----
-
-## ✅ Conclusion
-
-Scripts simplify project management.
-
----
-
-# ✅ Question 15 (6 Marks)
-
-## Develop a Simple React Application Using Props
-
----
-
-## 🔹 Program
-
-```js
-function Product(props) {
-  return <h2>{props.name} - ₹{props.price}</h2>;
-}
-
-function App() {
-  return (
-    <>
-      <Product name="Laptop" price="50000" />
-      <Product name="Mobile" price="20000" />
-    </>
-  );
-}
-
-export default App;
-```
-
----
-
-## 🔹 Working
-
-1. App sends data
-2. Product displays
-3. Reusable component
-
----
-
-## 🔹 Diagram
-
-```mermaid
-flowchart LR
-    A[App] --> B[Props]
-    B --> C[Product]
-```
-
----
-
-## ✅ Conclusion
-
-Props enable reusable components.
-
----
-
-# ✅ Question 16 (6 Marks)
-
-## Explain Controlled Components in React with Example
-
----
-
-## 🔹 Definition
-
-Controlled components are form elements controlled by React state.
-
----
-
-## 🔹 Example
-
-```js
-import { useState } from "react";
-
-function Form() {
-
-  const [name, setName] = useState("");
-
-  return (
-    <form>
-      <input
-        value={name}
-        onChange={(e)=>setName(e.target.value)}
-      />
-
-      <h3>{name}</h3>
-    </form>
-  );
-}
-```
-
----
-
-## 🔹 Working
-
-1. User types
-2. State updates
-3. UI updates
-
----
-
-## 🔹 Flow
-
-```mermaid
-flowchart LR
-    A[Input] --> B[State]
-    B --> C[Render]
-```
-
----
-
-## ✅ Conclusion
-
-Controlled components ensure form validation.
-
----
-Great 👍 Continuing **UNIT–II (React)** in the same **exam-oriented format**, strictly according to marks, with clear headings, code, Mermaid diagrams, and **no shrinking at the end**.
-
----
-
-# 📘 UNIT–II (Part–3)
-
-## State, Hooks, Lifecycle & Forms (Q17 to Q24)
-
----
-
-# ✅ Question 17 (5 Marks)
-
-## Explain State in React and Its Importance with Example
-
----
-
-## 🔹 Definition of State
-
-**State** is a built-in object used to store and manage component data that can change over time.
-
----
-
-## 🔹 Characteristics of State
-
-1. Mutable (can change)
-2. Local to component
-3. Triggers re-render
-4. Managed internally
-
----
-
-## 🔹 Example (useState Hook)
-
-```js
-import { useState } from "react";
-
-function Counter() {
-
-  const [count, setCount] = useState(0);
-
-  return (
-    <>
-      <h1>{count}</h1>
-      <button onClick={()=>setCount(count+1)}>
-        Increment
-      </button>
-    </>
-  );
-}
-```
-
----
-
-## 🔹 Working
-
-1. Button clicked
-2. State updates
-3. UI refreshes
-
----
-
-## 🔹 Diagram
-
-```mermaid
-flowchart LR
-    A[User Action] --> B[State Change]
-    B --> C[Re-render]
-```
-
----
-
-## ✅ Conclusion
-
-State makes components dynamic.
-
----
-
-# ✅ Question 18 (6 Marks)
-
-## Explain React Hooks and Discuss useState and useEffect with Examples
-
----
-
-## 🔹 Definition of Hooks
-
-**Hooks** allow functional components to use state and lifecycle features.
-
----
-
-## 🔹 Advantages of Hooks
-
-1. No class needed
-2. Reusable logic
-3. Cleaner code
-4. Better performance
-
----
-
-## 🔹 useState Example
-
-```js
-const [name, setName] = useState("Raj");
-```
-
----
-
-## 🔹 useEffect Example
-
-```js
-import { useEffect } from "react";
-
-useEffect(()=>{
-   console.log("Component Loaded");
-}, []);
-```
-
----
-
-## 🔹 Working of useEffect
-
-* Runs after render
-* Dependency array controls execution
-
----
-
-## 🔹 Hook Flow
-
-```mermaid
-flowchart LR
-    A[Render] --> B[useEffect]
-    B --> C[Side Effect]
-```
-
----
-
-## ✅ Conclusion
-
-Hooks simplify functional components.
-
----
-
 # ✅ Question 19 (5 Marks)
 
 ## Explain Lifecycle Methods in React Class Components
@@ -3886,1236 +2787,687 @@ Lifecycle methods manage component behavior.
 
 ---
 
-# ✅ Question 20 (6 Marks)
-
-## Develop a React Form with Validation
+Below is a **complete exam-oriented 20-mark answer for UNIT–II** of **Full Stack Application Development**, prepared strictly according to your instructions.
 
 ---
 
-## 🔹 Program
+# **UNIT – II: UNDERSTANDING REACT AND WEB SERVER & REACT STATE**
 
-```js
-import { useState } from "react";
+---
 
-function Login() {
+## **1. Introduction to React and Web Server**
 
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+### **Definition**
 
-  function validate() {
+React is an open-source JavaScript library used for building **interactive and dynamic user interfaces** for web applications.
 
-    if(email === "") {
-      setError("Email Required");
-      return false;
-    }
+A Web Server is a system that receives requests from clients (browsers) and sends web pages or data as responses.
 
-    setError("");
-    return true;
-  }
+In MERN stack:
 
-  function submit(e) {
-    e.preventDefault();
-    validate();
-  }
+* React works on the client side
+* Node.js + Express works as the web server
 
-  return (
-    <form onSubmit={submit}>
+---
 
-      <input
-        type="email"
-        value={email}
-        onChange={(e)=>setEmail(e.target.value)}
-      />
+### **Role of React in Full Stack Development**
 
-      <p>{error}</p>
+React is used to:
 
-      <button>Login</button>
+1. Create dynamic UI
+2. Update pages without reload
+3. Improve user experience
+4. Manage application components
+5. Communicate with backend APIs
 
-    </form>
-  );
-}
+---
+
+### **Client–Server Architecture**
+
+```
+Browser (React)
+      ↓ Request
+Web Server (Node + Express)
+      ↓
+Database (MongoDB)
+      ↑
+   Response
 ```
 
 ---
 
-## 🔹 Working
+## **2. Server Setup for React Application**
 
-1. User submits form
-2. Validation runs
-3. Error displayed
+### **Definition**
+
+Server setup refers to the configuration of tools and environment required to run React applications and backend services.
 
 ---
 
-## 🔹 Flow
+### **Steps for Server Setup**
 
-```mermaid
-flowchart LR
-    A[Form] --> B[Validate]
-    B --> C[Submit/Error]
+#### Step 1: Install Node.js
+
+Node.js must be installed to run React.
+
+Check version:
+
+```
+node -v
+npm -v
 ```
 
 ---
 
-## ✅ Conclusion
+#### Step 2: Install React App Tool
 
-Validation ensures correct input.
+```
+npx create-react-app myapp
+```
 
----
-
-# ✅ Question 21 (5 Marks)
-
-## Differentiate Between State and Props in React
+Creates a React project.
 
 ---
 
-## 🔹 Comparison Table
+#### Step 3: Start Development Server
 
-| Feature    | State        | Props       |
-| ---------- | ------------ | ----------- |
-| Mutability | Mutable      | Immutable   |
-| Scope      | Local        | Parent      |
-| Control    | Component    | Parent      |
-| Usage      | Dynamic Data | Static Data |
+```
+cd myapp
+npm start
+```
 
----
+Runs server on:
 
-## 🔹 Example
-
-```js
-// Props
-<User name="Amit" />
-
-// State
-const [age, setAge] = useState(20);
+```
+http://localhost:3000
 ```
 
 ---
 
-## 🔹 Diagram
+### **Folder Structure of React App**
 
-```mermaid
-flowchart LR
-    A[Parent] --> B[Props]
-    C[Component] --> D[State]
+```
+myapp/
+ ├── node_modules
+ ├── public
+ ├── src
+ │   ├── App.js
+ │   ├── index.js
+ │   └── components
+ └── package.json
 ```
 
 ---
 
-## ✅ Conclusion
+## **3. NVM (Node Version Manager)**
 
-State is internal, props are external.
+### **Definition**
 
----
-
-# ✅ Question 22 (5 Marks)
-
-## Explain Uncontrolled Components in React
+NVM is a tool used to install and manage multiple versions of Node.js on a single system.
 
 ---
 
-## 🔹 Definition
+### **Features of NVM**
 
-Uncontrolled components use DOM to handle input.
-
-Uses ref instead of state.
+1. Switch between versions
+2. Install old/new versions
+3. Manage projects easily
+4. Avoid compatibility issues
 
 ---
 
-## 🔹 Example
+### **Commands**
 
-```js
-import { useRef } from "react";
+Install Node version:
 
-function Form() {
+```
+nvm install 16
+```
 
-  const inputRef = useRef();
+Use version:
 
-  function submit() {
-    alert(inputRef.current.value);
-  }
+```
+nvm use 16
+```
 
-  return (
-    <>
-      <input ref={inputRef}/>
-      <button onClick={submit}>Submit</button>
-    </>
-  );
-}
+List versions:
+
+```
+nvm list
 ```
 
 ---
 
-## 🔹 Advantages
-
-1. Less code
-2. Fast execution
-3. Simple design
+## **4. Node.js, NPM, and Express in React Environment**
 
 ---
 
-## 🔹 Flow
+### **Node.js**
 
-```mermaid
-flowchart LR
-    A[DOM] --> B[ref]
-    B --> C[React]
+* Runs JavaScript on server
+* Manages backend
+* Supports API creation
+
+---
+
+### **NPM (Node Package Manager)**
+
+#### Definition
+
+NPM is used to install and manage libraries in Node.js projects.
+
+---
+
+#### Functions of NPM
+
+1. Install packages
+2. Update packages
+3. Remove packages
+4. Maintain dependencies
+
+---
+
+#### Example
+
 ```
-
----
-
-## ✅ Conclusion
-
-Uncontrolled components are useful for simple forms.
-
----
-
-# ✅ Question 23 (4 Marks)
-
-## Purpose of Dependency Array in useEffect Hook
-
----
-
-## 🔹 Definition
-
-Dependency array controls when useEffect runs.
-
----
-
-## 🔹 Example
-
-```js
-useEffect(()=>{
-  console.log("Updated");
-}, [count]);
-```
-
----
-
-## 🔹 Types
-
-| Array | Behavior     |
-| ----- | ------------ |
-| []    | Run once     |
-| [x]   | On x change  |
-| None  | Every render |
-
----
-
-## 🔹 Diagram
-
-```mermaid
-flowchart LR
-    A[State Change] --> B[Dependency Check]
-    B --> C[useEffect]
-```
-
----
-
-## ✅ Conclusion
-
-Dependency array optimizes performance.
-
----
-
-# ✅ Question 24 (6 Marks)
-
-## Explain React Context API with Example
-
----
-
-## 🔹 Definition
-
-Context API allows data sharing without props drilling.
-
----
-
-## 🔹 Example
-
-```js
-const UserContext = React.createContext();
-
-function App() {
-  return (
-    <UserContext.Provider value="Admin">
-      <Dashboard/>
-    </UserContext.Provider>
-  );
-}
-
-function Dashboard() {
-  return <Profile/>;
-}
-
-function Profile() {
-  return (
-    <UserContext.Consumer>
-      {(user)=><h1>{user}</h1>}
-    </UserContext.Consumer>
-  );
-}
-```
-
----
-
-## 🔹 Working
-
-1. Provider gives data
-2. Consumer receives data
-3. No intermediate props
-
----
-
-## 🔹 Diagram
-
-```mermaid
-flowchart TD
-    A[Provider] --> B[Dashboard]
-    B --> C[Profile]
-```
-
----
-
-## ✅ Conclusion
-
-Context simplifies global state management.
-
----
-
-
-Great 👍 Continuing **UNIT–II (React)** in the same **exam-oriented format**, strictly according to marks, with clear headings, code, Mermaid diagrams, and **no shrinking at the end**.
-
----
-
-# 📘 UNIT–II (Part–4)
-
-## Routing, API Integration, Axios & State Management (Q25 to Q32)
-
----
-
-# ✅ Question 25 (6 Marks)
-
-## Explain React Router and Its Role in Single Page Applications
-
----
-
-## 🔹 Definition of React Router
-
-**React Router** is a library used for client-side routing in React applications.
-
-It enables navigation without page reload.
-
----
-
-## 🔹 Features
-
-1. Dynamic routing
-2. Multiple routes
-3. URL handling
-4. SPA navigation
-
----
-
-## 🔹 Installation
-
-```bash
-npm install react-router-dom
-```
-
----
-
-## 🔹 Example
-
-```js
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-      </Routes>
-    </BrowserRouter>
-  );
-}
-```
-
----
-
-## 🔹 Routing Flow
-
-```mermaid
-flowchart LR
-    A[URL Change] --> B[Router]
-    B --> C[Component]
-```
-
----
-
-## ✅ Conclusion
-
-React Router enables smooth navigation.
-
----
-
-# ✅ Question 26 (6 Marks)
-
-## Integrate REST API in React Using Fetch Method
-
----
-
-## 🔹 Definition
-
-API integration connects frontend with backend services.
-
----
-
-## 🔹 Example
-
-```js
-import { useEffect, useState } from "react";
-
-function Users() {
-
-  const [users, setUsers] = useState([]);
-
-  useEffect(()=>{
-
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(res => res.json())
-      .then(data => setUsers(data));
-
-  }, []);
-
-  return (
-    <ul>
-      {users.map(u=>(
-        <li key={u.id}>{u.name}</li>
-      ))}
-    </ul>
-  );
-}
-```
-
----
-
-## 🔹 Working
-
-1. Component loads
-2. API called
-3. Data stored in state
-4. UI updated
-
----
-
-## 🔹 Flow
-
-```mermaid
-flowchart LR
-    A[React] --> B[Fetch API]
-    B --> C[Server]
-    C --> B
-```
-
----
-
-## ✅ Conclusion
-
-Fetch enables API communication.
-
----
-
-# ✅ Question 27 (6 Marks)
-
-## Integrate REST API Using Axios in React
-
----
-
-## 🔹 Definition of Axios
-
-Axios is a promise-based HTTP client.
-
----
-
-## 🔹 Installation
-
-```bash
 npm install axios
 ```
 
 ---
 
-## 🔹 Example
+### **Express.js**
 
-```js
-import axios from "axios";
-import { useEffect, useState } from "react";
+Used to create backend APIs.
 
-function Users() {
+Example:
 
-  const [users, setUsers] = useState([]);
+```javascript
+const express = require('express');
+const app = express();
 
-  useEffect(()=>{
-
-    axios.get("https://jsonplaceholder.typicode.com/users")
-         .then(res => setUsers(res.data));
-
-  }, []);
-
-  return (
-    <ul>
-      {users.map(u=>(
-        <li key={u.id}>{u.name}</li>
-      ))}
-    </ul>
-  );
-}
-```
-
----
-
-## 🔹 Advantages over Fetch
-
-| Feature        | Axios  | Fetch   |
-| -------------- | ------ | ------- |
-| JSON Parse     | Auto   | Manual  |
-| Error Handling | Better | Limited |
-| Interceptors   | Yes    | No      |
-
----
-
-## 🔹 Axios Flow
-
-```mermaid
-flowchart LR
-    A[React] --> B[Axios]
-    B --> C[Server]
-```
-
----
-
-## ✅ Conclusion
-
-Axios simplifies API handling.
-
----
-
-# ✅ Question 28 (5 Marks)
-
-## Explain Redux Architecture and Its Components
-
----
-
-## 🔹 Definition of Redux
-
-Redux is a state management library.
-
-It manages global state.
-
----
-
-## 🔹 Core Components
-
-1. Store
-2. Action
-3. Reducer
-
----
-
-## 🔹 Example
-
-### Action
-
-```js
-{ type: "INCREMENT" }
-```
-
-### Reducer
-
-```js
-function counter(state=0, action) {
-  if(action.type==="INCREMENT")
-     return state+1;
-}
-```
-
----
-
-## 🔹 Redux Flow
-
-```mermaid
-flowchart LR
-    A[Component] --> B[Action]
-    B --> C[Reducer]
-    C --> D[Store]
-    D --> A
-```
-
----
-
-## ✅ Conclusion
-
-Redux centralizes application state.
-
----
-
-# ✅ Question 29 (5 Marks)
-
-## Explain the Redux Data Flow with Neat Diagram
-
----
-
-## 🔹 Definition
-
-Redux follows unidirectional data flow.
-
----
-
-## 🔹 Steps
-
-1. Dispatch action
-2. Reducer updates state
-3. Store saves state
-4. UI refreshes
-
----
-
-## 🔹 Diagram
-
-```mermaid
-flowchart LR
-    A[UI] --> B[Dispatch]
-    B --> C[Reducer]
-    C --> D[Store]
-    D --> A
-```
-
----
-
-## 🔹 Benefits
-
-* Predictable state
-* Easy debugging
-
----
-
-## ✅ Conclusion
-
-Redux flow ensures consistency.
-
----
-
-# ✅ Question 30 (5 Marks)
-
-## Compare Redux and Context API
-
----
-
-## 🔹 Comparison Table
-
-| Feature     | Redux    | Context API |
-| ----------- | -------- | ----------- |
-| Setup       | Complex  | Simple      |
-| Performance | High     | Medium      |
-| Debugging   | Advanced | Limited     |
-| Size        | Large    | Small       |
-
----
-
-## 🔹 Usage
-
-Redux → Large apps
-Context → Small apps
-
----
-
-## 🔹 Diagram
-
-```mermaid
-flowchart LR
-    A[Global State] --> B[Redux]
-    A --> C[Context]
-```
-
----
-
-## ✅ Conclusion
-
-Redux suits large applications.
-
----
-
-# ✅ Question 31 (4 Marks)
-
-## Explain Higher Order Components (HOC) in React
-
----
-
-## 🔹 Definition
-
-HOC is a function that takes a component and returns enhanced component.
-
----
-
-## 🔹 Example
-
-```js
-function withAuth(Component) {
-
-  return function() {
-    return <Component isAuth={true}/>;
-  };
-}
-```
-
----
-
-## 🔹 Flow
-
-```mermaid
-flowchart LR
-    A[Component] --> B[HOC]
-    B --> C[Enhanced Component]
-```
-
----
-
-## ✅ Conclusion
-
-HOC improves reusability.
-
----
-
-# ✅ Question 32 (6 Marks)
-
-## Explain Code Splitting in React Using React.lazy()
-
----
-
-## 🔹 Definition
-
-Code splitting loads components on demand.
-
-Improves performance.
-
----
-
-## 🔹 Example
-
-```js
-import { lazy, Suspense } from "react";
-
-const Dashboard = lazy(()=>import("./Dashboard"));
-
-function App() {
-
-  return (
-    <Suspense fallback={<h1>Loading...</h1>}>
-      <Dashboard/>
-    </Suspense>
-  );
-}
-```
-
----
-
-## 🔹 Working
-
-1. Component loaded when needed
-2. Reduces bundle size
-
----
-
-## 🔹 Diagram
-
-```mermaid
-flowchart LR
-    A[User] --> B[Lazy Load]
-    B --> C[Component]
-```
-
----
-
-## ✅ Conclusion
-
-Code splitting improves app speed.
-
----
-
-Excellent 👍 Continuing **UNIT–II (React)** in the same **exam-oriented format**, strictly according to marks, with clear headings, code, Mermaid diagrams, and **no shrinking at the end**.
-
----
-
-# 📘 UNIT–II (Part–5)
-
-## Testing, Performance Optimization, Deployment & Security (Q33 to Q40)
-
----
-
-# ✅ Question 33 (6 Marks)
-
-## Explain Testing in React Using Jest and React Testing Library
-
----
-
-## 🔹 Definition of Testing
-
-Testing verifies whether application works as expected.
-
-React supports automated testing.
-
----
-
-## 🔹 Tools Used
-
-1. Jest – Testing framework
-2. React Testing Library – UI testing
-
----
-
-## 🔹 Installation
-
-```bash
-npm install --save-dev jest @testing-library/react
-```
-
----
-
-## 🔹 Example Test
-
-```js
-import { render, screen } from "@testing-library/react";
-import App from "./App";
-
-test("renders welcome text", () => {
-  render(<App />);
-  const text = screen.getByText("Welcome");
-  expect(text).toBeInTheDocument();
+app.get('/',(req,res)=>{
+  res.send("Hello");
 });
 ```
 
 ---
 
-## 🔹 Testing Flow
+## **5. Build-Time JSX Compilation**
 
-```mermaid
-flowchart LR
-    A[Test File] --> B[Jest]
-    B --> C[Component]
-    C --> D[Result]
-```
+### **Definition**
 
----
+JSX is a syntax extension that allows writing HTML inside JavaScript.
 
-## 🔹 Benefits
+Before execution, JSX is converted into JavaScript.
 
-1. Finds bugs early
-2. Improves quality
-3. Reduces maintenance
+This process is called **JSX Compilation**.
 
 ---
 
-## ✅ Conclusion
+### **JSX Example**
 
-Testing ensures reliable React apps.
-
----
-
-# ✅ Question 34 (5 Marks)
-
-## Techniques for Performance Optimization in React
-
----
-
-## 🔹 Definition
-
-Performance optimization improves speed and responsiveness.
-
----
-
-## 🔹 Techniques
-
-### 1. React.memo()
-
-Prevents unnecessary re-render.
-
-```js
-export default React.memo(Component);
-```
-
----
-
-### 2. useCallback()
-
-Caches functions.
-
-```js
-const handle = useCallback(()=>{}, []);
-```
-
----
-
-### 3. useMemo()
-
-Caches values.
-
-```js
-const result = useMemo(()=>calc(), []);
-```
-
----
-
-### 4. Lazy Loading
-
-Loads components on demand.
-
----
-
-### 5. Virtualization
-
-Renders only visible items.
-
----
-
-## 🔹 Optimization Flow
-
-```mermaid
-flowchart LR
-    A[State Change] --> B[Check Re-render]
-    B --> C[Optimized Render]
-```
-
----
-
-## ✅ Conclusion
-
-Optimization improves user experience.
-
----
-
-# ✅ Question 35 (6 Marks)
-
-## Explain Deployment of React Application on Netlify
-
----
-
-## 🔹 Definition
-
-Deployment means making application live.
-
----
-
-## 🔹 Steps
-
-### Step 1: Build Project
-
-```bash
-npm run build
-```
-
----
-
-### Step 2: Login Netlify
-
-Visit: netlify.com
-
----
-
-### Step 3: Upload Build Folder
-
-Drag and drop `build` folder.
-
----
-
-### Step 4: Get URL
-
-Netlify provides website link.
-
----
-
-## 🔹 Deployment Flow
-
-```mermaid
-flowchart LR
-    A[React App] --> B[Build]
-    B --> C[Netlify]
-    C --> D[Live Site]
-```
-
----
-
-## 🔹 Advantages
-
-1. Free hosting
-2. Fast CDN
-3. Auto deploy
-
----
-
-## ✅ Conclusion
-
-Netlify simplifies deployment.
-
----
-
-# ✅ Question 36 (5 Marks)
-
-## Explain Security Best Practices in React Applications
-
----
-
-## 🔹 Definition
-
-Security protects application from attacks.
-
----
-
-## 🔹 Best Practices
-
-1. Avoid eval()
-2. Sanitize input
-3. Use HTTPS
-4. Store tokens securely
-5. Prevent XSS
-
----
-
-## 🔹 Example (Prevent XSS)
-
-```js
-<div>{userInput}</div>
-```
-
-(React auto escapes content)
-
----
-
-## 🔹 Security Flow
-
-```mermaid
-flowchart LR
-    A[User Input] --> B[Sanitize]
-    B --> C[Safe Render]
-```
-
----
-
-## ✅ Conclusion
-
-Security ensures safe applications.
-
----
-
-# ✅ Question 37 (4 Marks)
-
-## Explain Error Boundaries in React
-
----
-
-## 🔹 Definition
-
-Error boundaries catch runtime errors in components.
-
----
-
-## 🔹 Example
-
-```js
-class ErrorBoundary extends React.Component {
-
-  state = { hasError: false };
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  render() {
-    if(this.state.hasError)
-      return <h1>Error</h1>;
-
-    return this.props.children;
-  }
-}
-```
-
----
-
-## 🔹 Usage
-
-```js
-<ErrorBoundary>
-  <App/>
-</ErrorBoundary>
-```
-
----
-
-## 🔹 Flow
-
-```mermaid
-flowchart LR
-    A[Component] --> B[Error]
-    B --> C[Boundary]
-```
-
----
-
-## ✅ Conclusion
-
-Error boundaries improve stability.
-
----
-
-# ✅ Question 38 (5 Marks)
-
-## Explain Progressive Web Apps (PWA) in React
-
----
-
-## 🔹 Definition
-
-PWA combines web and mobile features.
-
----
-
-## 🔹 Features
-
-1. Offline access
-2. Push notifications
-3. App-like UI
-4. Fast loading
-
----
-
-## 🔹 Example
-
-```bash
-npm install workbox-webpack-plugin
-```
-
----
-
-## 🔹 Architecture
-
-```mermaid
-flowchart LR
-    A[Browser] --> B[Service Worker]
-    B --> C[Cache]
-```
-
----
-
-## ✅ Conclusion
-
-PWA improves user engagement.
-
----
-
-# ✅ Question 39 (4 Marks)
-
-## Explain Server-Side Rendering (SSR) in React
-
----
-
-## 🔹 Definition
-
-SSR renders UI on server before sending to client.
-
----
-
-## 🔹 Example (Next.js)
-
-```js
-export async function getServerSideProps() {
-  return { props: { data: [] } };
-}
-```
-
----
-
-## 🔹 Benefits
-
-1. SEO friendly
-2. Faster load
-3. Better performance
-
----
-
-## 🔹 Flow
-
-```mermaid
-flowchart LR
-    A[Server] --> B[HTML]
-    B --> C[Browser]
-```
-
----
-
-## ✅ Conclusion
-
-SSR improves SEO.
-
----
-
-# ✅ Question 40 (6 Marks)
-
-## Explain Webpack and Babel in React Development
-
----
-
-## 🔹 Definition of Webpack
-
-Webpack bundles JavaScript files.
-
----
-
-## 🔹 Definition of Babel
-
-Babel converts modern JS to browser-compatible code.
-
----
-
-## 🔹 Example
-
-### Babel
-
-```js
-const x = () => "Hello";
+```javascript
+const element = <h1>Hello</h1>;
 ```
 
 Converted to:
 
-```js
-function x() {
-  return "Hello";
+```javascript
+React.createElement("h1",null,"Hello");
+```
+
+---
+
+### **Compilation Process**
+
+```
+JSX → Babel → JavaScript → Browser
+```
+
+---
+
+### **Role of Babel**
+
+Babel is a compiler that converts modern JavaScript and JSX into browser-compatible code.
+
+---
+
+## **6. Separate Script File, Transform, and Automate**
+
+---
+
+### **Separate Script File**
+
+React uses separate JavaScript files for components.
+
+Example:
+
+```
+Header.js
+Footer.js
+```
+
+---
+
+### **Transform**
+
+Transform means converting modern code into old compatible code.
+
+Done using:
+
+* Babel
+* Webpack
+
+---
+
+### **Automate**
+
+Automation means automatically compiling, bundling, and refreshing code.
+
+Tools used:
+
+* Webpack
+* Create React App
+* Vite
+
+---
+
+### **Benefits**
+
+1. Faster development
+2. Less manual work
+3. Error detection
+4. Automatic reload
+
+---
+
+## **7. React Library**
+
+### **Definition**
+
+React library provides functions and tools for building UI components.
+
+---
+
+### **Main Features**
+
+1. Virtual DOM
+2. Component-based
+3. Reusable code
+4. Fast rendering
+5. One-way data binding
+
+---
+
+### **Virtual DOM**
+
+Virtual DOM is a lightweight copy of real DOM.
+
+```
+Change → Virtual DOM → Compare → Update Real DOM
+```
+
+Improves performance.
+
+---
+
+## **8. React Components**
+
+### **Definition**
+
+Components are independent and reusable blocks of UI.
+
+---
+
+### **Types of Components**
+
+#### 1. Class Components
+
+```javascript
+class Welcome extends React.Component {
+ render() {
+  return <h1>Hello</h1>;
+ }
 }
 ```
 
 ---
 
-## 🔹 Build Process
+#### 2. Functional Components
 
-```mermaid
-flowchart LR
-    A[JSX/ES6] --> B[Babel]
-    B --> C[Webpack]
-    C --> D[Bundle]
+```javascript
+function Welcome() {
+ return <h1>Hello</h1>;
+}
 ```
 
 ---
 
-## 🔹 Advantages
+### **Advantages of Components**
 
-| Tool    | Benefit       |
-| ------- | ------------- |
-| Babel   | Compatibility |
-| Webpack | Optimization  |
+1. Reusability
+2. Easy maintenance
+3. Modular structure
+4. Readable code
 
 ---
 
-## ✅ Conclusion
+## **9. Composing Components**
 
-Webpack and Babel support modern development.
+### **Definition**
+
+Composing means combining multiple components into one.
+
+---
+
+### **Example**
+
+```javascript
+function App() {
+ return (
+  <Header/>
+  <Content/>
+  <Footer/>
+ );
+}
+```
+
+---
+
+### **Benefits**
+
+1. Better structure
+2. Easy management
+3. Clean design
+
+---
+
+## **10. Passing Data Using Properties (Props)**
+
+### **Definition**
+
+Props are used to pass data from parent to child components.
+
+---
+
+### **Example**
+
+```javascript
+function Student(props) {
+ return <h1>{props.name}</h1>;
+}
+
+<Student name="Rahul"/>
+```
+
+---
+
+### **Characteristics of Props**
+
+1. Read-only
+2. Immutable
+3. One-way data flow
+4. Used for communication
+
+---
+
+## **11. Property Validation**
+
+### **Definition**
+
+Property validation ensures correct type of data is passed.
+
+---
+
+### **Using PropTypes**
+
+```javascript
+Student.propTypes = {
+ name: PropTypes.string
+};
+```
+
+---
+
+### **Benefits**
+
+1. Avoid errors
+2. Improve reliability
+3. Debugging support
+
+---
+
+## **12. Using Children in React**
+
+### **Definition**
+
+Children allow passing components inside components.
+
+---
+
+### **Example**
+
+```javascript
+function Box(props) {
+ return <div>{props.children}</div>;
+}
+```
+
+---
+
+### **Usage**
+
+Used in:
+
+* Layouts
+* Containers
+* Wrappers
+
+---
+
+## **13. Dynamic Composition**
+
+### **Definition**
+
+Dynamic composition means creating components at runtime based on data.
+
+---
+
+### **Example**
+
+```javascript
+items.map(item => <List data={item}/>)
+```
+
+---
+
+### **Advantages**
+
+1. Flexible UI
+2. Dynamic rendering
+3. Data-driven design
+
+---
+
+## **14. Understanding React State**
+
+### **Definition**
+
+State is an object that stores dynamic data of a component.
+
+---
+
+### **Example**
+
+```javascript
+const [count,setCount] = useState(0);
+```
+
+---
+
+### **Characteristics of State**
+
+1. Mutable
+2. Local to component
+3. Triggers re-render
+4. Manages data
+
+---
+
+## **15. Setting State**
+
+### **Using useState Hook**
+
+```javascript
+const [name,setName] = useState("Ram");
+```
+
+---
+
+### **Updating State**
+
+```javascript
+setName("Shyam");
+```
+
+---
+
+### **Rules**
+
+1. Do not modify directly
+2. Use setter function
+3. Updates are asynchronous
+
+---
+
+## **16. Event Handling in React**
+
+### **Definition**
+
+Event handling allows responding to user actions.
+
+---
+
+### **Example**
+
+```javascript
+<button onClick={handleClick}>Click</button>
+```
+
+---
+
+### **Common Events**
+
+| Event    | Purpose      |
+| -------- | ------------ |
+| onClick  | Mouse click  |
+| onChange | Input change |
+| onSubmit | Form submit  |
+
+---
+
+## **17. Communication from Child to Parent**
+
+### **Definition**
+
+Child-to-parent communication is done using callback functions.
+
+---
+
+### **Example**
+
+```javascript
+function Parent() {
+ function getData(data){
+  console.log(data);
+ }
+
+ return <Child send={getData}/>;
+}
+```
+
+---
+
+## **18. Stateless Components**
+
+### **Definition**
+
+Stateless components do not maintain state.
+
+They depend only on props.
+
+---
+
+### **Example**
+
+```javascript
+function Hello(props){
+ return <h1>{props.name}</h1>;
+}
+```
+
+---
+
+### **Advantages**
+
+1. Simple
+2. Fast
+3. Easy testing
+4. Less memory
+
+---
+
+## **19. Designing Components: State vs Props**
+
+| Feature    | State        | Props         |
+| ---------- | ------------ | ------------- |
+| Modifiable | Yes          | No            |
+| Scope      | Local        | Global        |
+| Purpose    | Dynamic data | Communication |
+| Control    | Component    | Parent        |
+
+---
+
+## **20. Component Hierarchy Communication**
+
+### **Definition**
+
+Component hierarchy refers to parent-child relationships.
+
+---
+
+### **Types**
+
+1. Parent → Child (Props)
+2. Child → Parent (Callback)
+3. Sibling (Common parent)
+
+---
+
+### **Diagram**
+
+```
+App
+ ↓
+Parent
+ ↓
+Child
+```
+
+---
+
+## **21. Applications of Unit–II Concepts**
+
+1. Form handling
+2. Dashboard UI
+3. Admin panels
+4. User profiles
+5. Dynamic pages
+6. SPA applications
+
+---
+.
+
 
 ---
 Below is a **complete exam-oriented 20-mark answer for UNIT–IV** of **Full Stack Application Development**, prepared strictly according to your instructions, with **diagrams in Mermaid syntax**.

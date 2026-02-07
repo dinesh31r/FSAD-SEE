@@ -3466,7 +3466,653 @@ Child
 6. SPA applications
 
 ---
-.
+Below is a **complete exam-oriented 20-mark answer for UNIT–III** of **Full Stack Application Development**, prepared strictly according to your instructions, with **diagrams in Mermaid syntax**.
+
+---
+
+# **UNIT – III: INTRODUCTION TO MONGODB AND MONGOOSE**
+
+---
+
+## **1. Introduction to NoSQL Databases**
+
+### **Definition**
+
+NoSQL (Not Only SQL) databases are non-relational databases designed to store, manage, and retrieve large volumes of unstructured and semi-structured data.
+
+They do not use traditional tables, rows, and columns.
+
+---
+
+### **Features of NoSQL Databases**
+
+1. Schema-less structure
+2. High scalability
+3. Distributed architecture
+4. High performance
+5. Flexible data storage
+
+---
+
+### **Types of NoSQL Databases**
+
+| Type           | Example   | Description                |
+| -------------- | --------- | -------------------------- |
+| Document-based | MongoDB   | Stores JSON-like documents |
+| Key-Value      | Redis     | Stores key-value pairs     |
+| Column-based   | Cassandra | Stores column families     |
+| Graph-based    | Neo4j     | Stores graph data          |
+
+---
+
+### **Applications of NoSQL**
+
+1. Social media platforms
+2. Big data systems
+3. Real-time analytics
+4. IoT applications
+5. Content management systems
+
+---
+
+## **2. Introduction to MongoDB**
+
+### **Definition**
+
+MongoDB is an open-source, document-oriented NoSQL database that stores data in JSON-like format called BSON.
+
+---
+
+### **Features of MongoDB**
+
+1. Document-based storage
+2. High scalability
+3. Indexing support
+4. Replication
+5. Automatic sharding
+6. High availability
+
+---
+
+### **MongoDB Data Structure**
+
+```
+Database → Collection → Document → Fields
+```
+
+---
+
+### **MongoDB Architecture (Mermaid Diagram)**
+
+```mermaid
+graph TD
+    A[Client Application] --> B[MongoDB Server]
+    B --> C[Database]
+    C --> D[Collection]
+    D --> E[Document]
+```
+
+---
+
+### **Components of MongoDB**
+
+1. Database – Container for collections
+2. Collection – Group of documents
+3. Document – Record in JSON format
+4. Field – Key-value pair
+
+---
+
+### **Example MongoDB Document**
+
+```json
+{
+  "id": 101,
+  "name": "Rahul",
+  "course": "MCA",
+  "marks": 85
+}
+```
+
+---
+
+## **3. MongoDB Sharding**
+
+### **Definition**
+
+Sharding is a method of distributing data across multiple servers to improve performance and scalability.
+
+Each server stores a part of the data.
+
+---
+
+### **Need for Sharding**
+
+1. Handle large data
+2. Improve performance
+3. Reduce server load
+4. Support horizontal scaling
+
+---
+
+### **Sharding Architecture (Mermaid Diagram)**
+
+```mermaid
+graph LR
+    A[Client] --> B[Query Router]
+    B --> C[Shard 1]
+    B --> D[Shard 2]
+    B --> E[Shard 3]
+```
+
+---
+
+### **Components of Sharding**
+
+1. Shard – Stores part of data
+2. Config Server – Stores metadata
+3. Query Router (mongos) – Routes queries
+
+---
+
+### **Advantages of Sharding**
+
+1. High availability
+2. Better load balancing
+3. Supports big data
+4. Faster queries
+
+---
+
+## **4. MongoDB CRUD Operations**
+
+### **Definition**
+
+CRUD stands for:
+
+* Create
+* Read
+* Update
+* Delete
+
+These are basic database operations.
+
+---
+
+## **4.1 Create Operations**
+
+### **Using insertOne()**
+
+```javascript
+db.students.insertOne({
+ name:"Amit",
+ marks:80
+});
+```
+
+---
+
+### **Using insertMany()**
+
+```javascript
+db.students.insertMany([
+ {name:"Ravi",marks:75},
+ {name:"Sita",marks:85}
+]);
+```
+
+---
+
+### **Using save()**
+
+```javascript
+db.students.save({
+ name:"John",
+ marks:90
+});
+```
+
+---
+
+## **4.2 Read Operations**
+
+### **Using find()**
+
+```javascript
+db.students.find();
+```
+
+Returns all documents.
+
+---
+
+### **Using findOne()**
+
+```javascript
+db.students.findOne({name:"Amit"});
+```
+
+Returns single document.
+
+---
+
+### **Using Filters**
+
+```javascript
+db.students.find({marks:{$gt:80}});
+```
+
+---
+
+## **4.3 Update Operations**
+
+### **Using updateOne()**
+
+```javascript
+db.students.updateOne(
+ {name:"Amit"},
+ {$set:{marks:90}}
+);
+```
+
+---
+
+### **Using updateMany()**
+
+```javascript
+db.students.updateMany(
+ {course:"MCA"},
+ {$set:{grade:"A"}}
+);
+```
+
+---
+
+## **4.4 Delete Operations**
+
+### **Using deleteOne()**
+
+```javascript
+db.students.deleteOne({name:"Amit"});
+```
+
+---
+
+### **Using deleteMany()**
+
+```javascript
+db.students.deleteMany({course:"MCA"});
+```
+
+---
+
+## **CRUD Operation Flow (Mermaid Diagram)**
+
+```mermaid
+flowchart LR
+    A[User] --> B[Application]
+    B --> C[MongoDB]
+    C --> B
+    B --> A
+```
+
+---
+
+## **5. Introduction to Mongoose**
+
+### **Definition**
+
+Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js.
+
+It provides schema-based modeling.
+
+---
+
+### **Features of Mongoose**
+
+1. Schema validation
+2. Relationship support
+3. Middleware
+4. Easy queries
+5. Data casting
+
+---
+
+### **Role of Mongoose in MERN**
+
+```
+Node.js → Mongoose → MongoDB
+```
+
+---
+
+## **6. Connecting MongoDB Using Mongoose**
+
+### **Example**
+
+```javascript
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/studentDB')
+.then(()=>console.log("Connected"))
+.catch(err=>console.log(err));
+```
+
+---
+
+### **Connection Architecture (Mermaid Diagram)**
+
+```mermaid
+graph TD
+    A[Node.js App] --> B[Mongoose]
+    B --> C[MongoDB Database]
+```
+
+---
+
+## **7. Understanding Mongoose Schema**
+
+### **Definition**
+
+Schema defines the structure of documents in a collection.
+
+It specifies fields and their data types.
+
+---
+
+### **Example Schema**
+
+```javascript
+const studentSchema = new mongoose.Schema({
+ name: String,
+ age: Number,
+ course: String,
+ marks: Number
+});
+```
+
+---
+
+### **Advantages of Schema**
+
+1. Data consistency
+2. Validation
+3. Better structure
+4. Error reduction
+
+---
+
+## **8. Creating Mongoose Model**
+
+### **Definition**
+
+A Model is a compiled version of schema used to perform database operations.
+
+---
+
+### **Example**
+
+```javascript
+const Student = mongoose.model("Student",studentSchema);
+```
+
+---
+
+### **Schema–Model Relationship (Mermaid Diagram)**
+
+```mermaid
+graph LR
+    A[Schema] --> B[Model]
+    B --> C[Collection]
+```
+
+---
+
+## **9. Registering User Model**
+
+### **Definition**
+
+Registering a model means creating a structure to store user data.
+
+---
+
+### **Example**
+
+```javascript
+const userSchema = new mongoose.Schema({
+ username:String,
+ email:String,
+ password:String
+});
+
+const User = mongoose.model("User",userSchema);
+```
+
+---
+
+## **10. Creating Documents Using save()**
+
+### **Definition**
+
+save() is used to store data in database.
+
+---
+
+### **Example**
+
+```javascript
+const user = new User({
+ username:"ram",
+ email:"ram@gmail.com",
+ password:"1234"
+});
+
+user.save();
+```
+
+---
+
+### **Process Flow (Mermaid Diagram)**
+
+```mermaid
+flowchart TD
+    A[Create Object] --> B[Call save()]
+    B --> C[Validate Schema]
+    C --> D[Store in MongoDB]
+```
+
+---
+
+## **11. Finding Documents Using find()**
+
+### **Example**
+
+```javascript
+User.find({},(err,data)=>{
+ console.log(data);
+});
+```
+
+---
+
+### **Finding Multiple Records**
+
+Returns array of documents.
+
+---
+
+## **12. Reading Single Document Using findOne()**
+
+### **Example**
+
+```javascript
+User.findOne({username:"ram"});
+```
+
+Returns first matched record.
+
+---
+
+### **Advantages**
+
+1. Fast access
+2. Less memory
+3. Simple query
+
+---
+
+## **13. Updating Existing Documents**
+
+### **Example**
+
+```javascript
+User.updateOne(
+ {username:"ram"},
+ {$set:{email:"new@gmail.com"}}
+);
+```
+
+---
+
+### **Update Flow (Mermaid Diagram)**
+
+```mermaid
+flowchart LR
+    A[Search Record] --> B[Modify Data]
+    B --> C[Update in DB]
+```
+
+---
+
+## **14. Deleting Existing Documents**
+
+### **Example**
+
+```javascript
+User.deleteOne({username:"ram"});
+```
+
+---
+
+### **Delete Process**
+
+1. Search document
+2. Verify condition
+3. Remove data
+
+---
+
+## **15. Extending Mongoose Schema**
+
+### **Definition**
+
+Schema extension means adding extra rules and features.
+
+---
+
+## **15.1 Default Values**
+
+### **Example**
+
+```javascript
+const schema = new mongoose.Schema({
+ status:{type:String,default:"Active"}
+});
+```
+
+---
+
+## **15.2 Schema Modifiers**
+
+| Modifier | Purpose         |
+| -------- | --------------- |
+| required | Mandatory field |
+| unique   | Unique value    |
+| trim     | Remove spaces   |
+| min/max  | Range control   |
+
+---
+
+### **Example**
+
+```javascript
+name:{type:String,required:true}
+```
+
+---
+
+## **15.3 Predefined Modifiers**
+
+### **Example**
+
+```javascript
+age:{type:Number,min:18,max:60}
+```
+
+---
+
+## **15.4 Custom Setter Modifiers**
+
+### **Definition**
+
+Setter modifies value before saving.
+
+---
+
+### **Example**
+
+```javascript
+name:{
+ type:String,
+ set:value => value.toUpperCase()
+}
+```
+
+---
+
+## **15.5 Custom Getter Modifiers**
+
+### **Definition**
+
+Getter modifies value when retrieving.
+
+---
+
+### **Example**
+
+```javascript
+marks:{
+ type:Number,
+ get:v => Math.round(v)
+}
+```
+
+---
+
+## **16. Advantages of Using MongoDB with Mongoose**
+
+1. Structured data modeling
+2. Easy CRUD operations
+3. Validation support
+4. Security
+5. Performance
+6. Scalable design
+
+---
+
+## **17. Practical Applications of Unit–III Concepts**
+
+1. User management systems
+2. Student databases
+3. E-commerce product storage
+4. Banking applications
+5. Hospital management systems
+6. Inventory systems
+
+---
+
+If you want, I can now prepare **UNIT–IV (RESTful APIs and MongoDB Integration)** in the same **exam-focused format with Mermaid diagrams**.
+
 
 
 ---
